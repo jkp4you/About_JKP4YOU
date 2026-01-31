@@ -1,20 +1,271 @@
-.row.content {height: 1500px}
-    
-.sidenav {
-    background-color: #f1f1f1;
-    height: 100%;
+/* ============================================
+   Global Styles
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-    
-footer {
-    background-color: #555;
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    padding-top: 60px;
+}
+
+/* ============================================
+   Navigation Bar
+   ============================================ */
+.navbar {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: 700;
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.05);
+    color: #fff !important;
+}
+
+.navbar-nav .nav-link {
+    margin-left: 20px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffd700 !important;
+    border-bottom: 2px solid #ffd700;
+}
+
+.navbar-nav .nav-link.active {
+    color: #ffd700 !important;
+    border-bottom: 2px solid #ffd700;
+}
+
+/* ============================================
+   Hero Section
+   ============================================ */
+.hero-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
-    padding: 15px;
+    min-height: calc(100vh - 60px);
+    display: flex;
+    align-items: center;
+    padding: 60px 0;
 }
-    
-@media screen and (max-width: 767px) {
-    .sidenav {
-        height: auto;
-        padding: 15px;
+
+.hero-section h1 {
+    animation: fadeInDown 0.8s ease;
+}
+
+.hero-section p {
+    animation: fadeInUp 0.8s ease;
+    animation-delay: 0.2s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.hero-section .btn {
+    animation: fadeInUp 0.8s ease;
+    animation-delay: 0.4s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.hero-icon {
+    font-size: 150px;
+    opacity: 0.9;
+    animation: bounce 2s infinite;
+}
+
+/* ============================================
+   Features Section
+   ============================================ */
+.features-section {
+    background-color: #f8f9fa;
+    padding: 60px 0;
+}
+
+.features-section h2 {
+    color: #333;
+    margin-bottom: 50px;
+    font-size: 36px;
+}
+
+.feature-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.feature-icon {
+    font-size: 48px;
+    color: #667eea;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+    transform: scale(1.2);
+    color: #764ba2;
+}
+
+.feature-card h3 {
+    color: #333;
+    margin: 20px 0;
+    font-weight: 700;
+}
+
+.feature-card p {
+    color: #666;
+    line-height: 1.8;
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+.footer {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px 0 20px;
+    margin-top: 60px;
+}
+
+.footer h5 {
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #ffd700;
+}
+
+.footer p {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.footer a {
+    color: white;
+    transition: all 0.3s ease;
+    font-size: 18px;
+}
+
+.footer a:hover {
+    color: #ffd700;
+    transform: scale(1.2);
+}
+
+.footer hr {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.footer .text-md-right {
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+    .footer .text-md-right {
+        text-align: left;
+        margin-top: 20px;
     }
-    .row.content {height: auto;} 
+}
+
+/* ============================================
+   Animations
+   ============================================ */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 28px;
+    }
+
+    .hero-icon {
+        font-size: 100px;
+        margin-top: 30px;
+    }
+
+    .navbar-nav .nav-link {
+        margin-left: 0;
+        padding: 10px 0;
+    }
+
+    .features-section h2 {
+        font-size: 28px;
+    }
+}
+
+/* ============================================
+   Button Styles
+   ============================================ */
+.btn-primary {
+    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+    border: none;
+    color: #333;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+    color: #333;
+    background: linear-gradient(135deg, #ffed4e 0%, #ffd700 100%);
+}
+
+.btn-outline-light {
+    font-weight: 600;
+    border-width: 2px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover {
+    background-color: white;
+    color: #667eea;
+    transform: translateY(-3px);
 }
